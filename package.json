@@ -1,6 +1,6 @@
 {
   "name": "@secure-storage/common",
-  "version": "1.0.8",
+  "version": "2.0.0",
   "description": "NPM package for storing and managing data across window local-storage and session-storage securely",
   "main": "dist/index.cjs",
   "module": "dist/index.js",
@@ -47,6 +47,9 @@
     "react secure local storage"
   ],
   "author": "Sanjiv39",
+  "contributors": [
+    "Kencorma"
+  ],
   "license": "MIT",
   "devDependencies": {
     "@arethetypeswrong/cli": "^0.18.1",
