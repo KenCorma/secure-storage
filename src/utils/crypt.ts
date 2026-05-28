@@ -1,9 +1,10 @@
 import CryptoJS from "crypto-js";
-import { mainConfig } from "./config";
+import { mainConfig,DEFAULT_SECRET } from "./config";
 
-const secret = mainConfig.secret;
 
 export const encrypt = (value: string) => {
+  const secret = mainConfig.secret;
+  if (secret === DEFAULT_SECRET) console.warn('Secret is default! Please Change')
   try {
     if (typeof value !== "string") {
       throw new Error("Value must be string");
@@ -17,9 +18,12 @@ export const encrypt = (value: string) => {
 };
 
 export const decrypt = (value: string) => {
+  const secret = mainConfig.secret;
+  if (secret === DEFAULT_SECRET) console.warn('Secret is default! Please Change');
   try {
     if (typeof value !== "string") {
-      throw new Error("Value must be string");
+      console.warn("Value is not string")
+      return null
     }
     const str = CryptoJS.AES.decrypt(value, secret).toString(CryptoJS.enc.Utf8);
     return str;

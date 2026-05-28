@@ -7,16 +7,13 @@ export type Config = {
   prefix: string;
 };
 
-const ENV =
-  (typeof process === "object" &&
-    process?.env &&
-    typeof process.env === "object" &&
-    process.env) ||
-  null;
+export const DEFAULT_SECRET = "4vSEcR6RsRwko4bPJ0"
+
+//TODO: Return ENV when ready
 
 export const mainConfig: Config = {
-  secret: ENV?.SECURE_STORAGE_SECRET || "x1bQYQA4vSEcR6RQ05XtJg",
-  prefix: ENV?.SECURE_STORAGE_PREFIX || "@secst",
+  secret: DEFAULT_SECRET,
+  prefix: "web-storage",
 };
 
 const optionValidation = (
